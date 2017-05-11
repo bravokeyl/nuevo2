@@ -8,22 +8,21 @@ export default class NuevoDemo extends Component {
   constructor(props){
     super(props);
     this.onPressLogin = this.onPressLogin.bind(this);
-    console.log(this.props.screenProps);
+    this.props.screenProps.auth.signOut();
   }
   onPressLogin(){
     console.log("Login button pressed");
-    console.log(this.props.navigation);
     this.props.navigation.navigate('Login');
   }
   componentWillMount() {
+    console.log("Demo Component will mount");
     let self = this;
+    console.log("Current User",this.props.screenProps.currentUser);
     this.props.screenProps.auth.onAuthStateChanged(function(user) {
-      console.log(user);
       if(user != null) {
         // self.props.navigation.navigate('Dash');
       }
     });
-    console.log("Demo Component will mount");
   }
   componentDidMount() {
     console.log("Demo Component did mount");

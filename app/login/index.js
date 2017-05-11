@@ -11,10 +11,13 @@ export default class NuevoLogin extends Component {
   constructor(props){
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      email: "",
+      password: ""
     }
     this.onPressLogin = this.onPressLogin.bind(this);
+  }
+  componentWillMount() {
+    console.log("NuevoLogin Component will mount");
   }
   componentDidMount() {
     console.log("NuevoLogin Component did mount");
@@ -27,7 +30,7 @@ export default class NuevoLogin extends Component {
         console.log("  Email: "+profile.email);
         console.log("  Photo URL: "+profile.photoURL);
       });
-      this.props.navigation.navigate('Home');
+      // this.props.navigation.navigate('Home');
     } else {
       console.log("No User",user)
     }
@@ -45,7 +48,7 @@ export default class NuevoLogin extends Component {
       //   ]
       // })
       // NuevoNavProps.dispatch(resetAction)
-      NuevoNavProps.navigate('Home');
+      NuevoNavProps.navigate('Dash');
     }).catch(function(error) {
       var errorCode = error.code;
       var errorMessage = error.message;

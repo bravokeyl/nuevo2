@@ -14,7 +14,6 @@ export default class NuevoDash extends Component {
       email: '',
       password: ''
     }
-    this.onPressLogin = this.onPressLogin.bind(this);
   }
   componentDidMount() {
     console.log("NuevoDash Component did mount");

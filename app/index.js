@@ -16,9 +16,11 @@ export default class NuevoApp extends Component {
   }
   componentWillMount() {
     console.log("App Component will mount");
+    let self = this;
     NuevoFireAuth.onAuthStateChanged(function(user) {
       console.info("onAuthStateChanged");
       if ( user != null ) {
+        NavigationActions.navigate({ routeName: 'Dash' })
         console.info("User",user.email)
       } else {
         console.log("Not an User",user)
