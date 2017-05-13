@@ -33,7 +33,7 @@ export default class NuevoDash extends Component {
 
   render(){
     return(
-      <ScrollView>
+      <ScrollView style={ [NuevoStyles.container] }>
       <View style={ [NuevoStyles.container] }>
         {
         // <View style={{position:'absolute',top:0,bottom:0,}}>

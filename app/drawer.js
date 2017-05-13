@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { DrawerNavigator, StackNavigator, NavigationActions } from 'react-navigation';
+import { DrawerNavigator, TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 import NuevoDash from './dash';
+import NuevoStat from './stat';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
@@ -58,7 +59,36 @@ class MyNotificationsScreen extends React.Component {
     );
   }
 }
-
+const statRoutes = {
+  DayStat: {
+    screen: NuevoStat,
+    navigationOptions: ({navigation})=>({
+      title: 'Day',
+    })
+  },
+  WeekStat: {
+    screen: NuevoStat,
+    navigationOptions: ({navigation})=>({
+      title: 'Week',
+    })
+  },
+  MonthStat: {
+    screen: NuevoStat,
+    navigationOptions: ({navigation})=>({
+      title: 'Month',
+    })
+  }
+}
+const NuevoStatTab = TabNavigator(statRoutes,{
+  tabBarOptions: {
+    style: {
+      backgroundColor: '#fe5722',
+    },
+    indicatorStyle: {
+      backgroundColor: '#fff'
+    }
+  }
+});
 const dashRoutes = {
   HomeDash: {
     screen: NuevoDash,
@@ -67,6 +97,47 @@ const dashRoutes = {
       headerStyle: {
         backgroundColor: '#fe5722',
         paddingHorizontal: 16,
+        elevation: 0,
+        shadowOpacity: 0,
+      },
+      headerTitleStyle: {
+        color: '#fff'
+      },
+      headerLeft: (
+        <Icon name="menu" size={24} iconStyle={{color:'#fff'}}
+        onPress={(et)=>{console.log(navigation);navigation.navigate('DrawerOpen');}}/>
+      ),
+      headerRight: (<Icon name="more-vert" size={24} iconStyle={{color:'#fff'}} />)
+    })
+  },
+  HomeStat: {
+    screen: NuevoStatTab,
+    navigationOptions: ({navigation})=>({
+      title: 'NuevoStatTab',
+      headerStyle: {
+        backgroundColor: '#fe5722',
+        paddingHorizontal: 16,
+        elevation: 0,
+        shadowOpacity: 0,
+      },
+      headerTitleStyle: {
+        color: '#fff'
+      },
+      headerLeft: (<Icon name="menu" size={24} iconStyle={{color:'#fff'}} onPress={(et)=>{console.log(navigation);navigation.navigate('DrawerOpen');}}/>),
+      headerRight: (<Icon name="more-vert" size={24} iconStyle={{color:'#fff'}} />)
+    })
+  }
+}
+const statstackRoutes = {
+  HomeStat: {
+    screen: NuevoStatTab,
+    navigationOptions: ({navigation})=>({
+      title: 'NuevoStatTab',
+      headerStyle: {
+        backgroundColor: '#fe5722',
+        paddingHorizontal: 16,
+        elevation: 0,
+        shadowOpacity: 0,
       },
       headerTitleStyle: {
         color: '#fff'
@@ -78,6 +149,8 @@ const dashRoutes = {
 }
 
 const NuevoDashStack = StackNavigator(dashRoutes);
+const NuevoStatStack = StackNavigator(statstackRoutes);
+
 
 export const MyApp = DrawerNavigator({
   Home: {
@@ -86,6 +159,10 @@ export const MyApp = DrawerNavigator({
   Notifications: {
     screen: MyNotificationsScreen,
     title: 'NuevoNotif',
+  },
+  NuevoStat: {
+    screen: NuevoStatStack,
+    title: 'NuevoStats',
   },
 },{
   initialRouteName: 'Home'
