@@ -38,22 +38,35 @@ export default class NuevoLogin extends Component {
   onPressLogin(){
     let NuevoNavProps = this.props.navigation;
     console.log("Login button pressed", this.state.email,this.state.password);
-    NuevoFireAuth.signInWithEmailAndPassword(this.state.email, this.state.password)
-    .then(function(userData){
-      console.log(userData);
-      // const resetAction = NavigationActions.reset({
-      //   index: 0,
-      //   actions: [
-      //     NavigationActions.navigate({ routeName: 'Home'})
-      //   ]
-      // })
-      // NuevoNavProps.dispatch(resetAction)
-      NuevoNavProps.navigate('Dash');
-    }).catch(function(error) {
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      console.log("Error during login",error);
-    });
+    // NuevoNavProps.navigate('Dash');
+    const resetAction = NavigationActions.reset({
+      index: 0,
+      actions: [
+        NavigationActions.navigate({ routeName: 'Dash'})
+      ]
+    })
+    NuevoNavProps.dispatch(resetAction)
+    // NuevoFireAuth.signInWithEmailAndPassword(this.state.email, this.state.password)
+    // .then(function(userData){
+    //   console.log(userData);
+    //   const resetAction = NavigationActions.reset({
+    //     index: 0,
+    //     actions: [
+    //       NavigationActions.navigate({ routeName: 'Dash'})
+    //     ]
+    //   })
+    //   NuevoNavProps.dispatch(resetAction)
+    //   // NuevoNavProps.dispatch({
+    //   //    type: 'Reset',
+    //   //    index: 0,
+    //   //   actions: [{ type: 'Navigate', routeName: 'Dash' }]
+    //   // });
+    //   // NuevoNavProps.navigate('Dash');
+    // }).catch(function(error) {
+    //   var errorCode = error.code;
+    //   var errorMessage = error.message;
+    //   console.log("Error during login",error);
+    // });
   }
   render(){
     return(

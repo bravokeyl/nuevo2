@@ -7,5 +7,5 @@ import {
 import NuevoApp from './app/index';
 import {MyApp} from './app/drawer';
 
-StatusBar.setBackgroundColor('#fa5e2b');
-AppRegistry.registerComponent('nuevo2', () => MyApp);
+StatusBar.setBackgroundColor('#f5511e'); // #fa5e2b (#fe5722--lighter orange)
+AppRegistry.registerComponent('nuevo2', () => NuevoApp);

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
-import { FormLabel, FormInput, Button } from 'react-native-elements';
+import { View, Text, Image, ScrollView } from 'react-native';
+import { FormLabel, FormInput, Button, Icon, Card } from 'react-native-elements';
 import { NavigationActions } from 'react-navigation';
 import NuevoFireAuth from '../firebase';
 // import RNFirebase from 'react-native-firebase'
@@ -33,14 +33,51 @@ export default class NuevoDash extends Component {
 
   render(){
     return(
-      <View style={ [NuevoStyles.container, NuevoStyles.loginBg] }>
-        <View style={{position:'absolute',top:0,bottom:0,}}>
-          <Image source={require('../assets/m.jpg')} />
-        </View>
-        <View style={{backgroundColor: 'rgba(233, 111, 66, 0.8)'}}>
-          <Text>Hola!</Text>
-        </View>
+      <ScrollView>
+      <View style={ [NuevoStyles.container] }>
+        {
+        // <View style={{position:'absolute',top:0,bottom:0,}}>
+        //   <Image source={require('../assets/m.jpg')} />
+        // </View>
+        }
+        <Card>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
+        <Card>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
+        <Card>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
+        <Card>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
+        <Card>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
+        <Card containerStyle={{marginBottom:16}}>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+          <Text style={{marginBottom: 10}}>
+           The idea with React Native Elements is more about component structure than actual design.
+          </Text>
+        </Card>
       </View>
+      </ScrollView>
     )
   }
 }

@@ -4,8 +4,7 @@ import { StyleSheet } from 'react-native';
 const NuevoStyles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: '#fff'
   },
   loginBg: {
     backgroundColor: 'rgba(233, 111, 66, 0.98)',

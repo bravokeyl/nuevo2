@@ -4,6 +4,7 @@ import { Icon } from 'react-native-elements';
 import NuevoDemo from './demo';
 import NuevoLogin from './login';
 import NuevoDash from './dash';
+import {MyApp} from './drawer';
 
 const stackRoutes = {
   Demo: {
@@ -21,11 +22,12 @@ const stackRoutes = {
     }
   },
   Dash: {
-    screen: NuevoDash,
+    screen: MyApp,
     navigationOptions: {
       title: 'NuevoDash',
-      // header: null
+      header: null
     }
   }
 };
+
 export const NuevoStack =  StackNavigator(stackRoutes);
