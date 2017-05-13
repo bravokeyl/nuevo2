@@ -38,6 +38,24 @@ const NuevoStyles = StyleSheet.create({
   input: {
     width: 200,
     color: '#fff',
+  },
+  card: {
+    flexDirection: 'row',
+    paddingVertical: 16,
+  },
+  left: {
+    paddingLeft: 16,
+    paddingRight: 32,
+  },
+  right: {
+    paddingRight: 32,
+  },
+  key: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  val: {
+    fontSize: 30,
   }
 });
 

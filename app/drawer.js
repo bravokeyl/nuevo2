@@ -4,6 +4,7 @@ import { Icon } from 'react-native-elements';
 import { DrawerNavigator, TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 import NuevoDash from './dash';
 import NuevoStat from './stat';
+import NuevoStatWeek from './stat/week';
 
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
@@ -63,11 +64,11 @@ const statRoutes = {
   DayStat: {
     screen: NuevoStat,
     navigationOptions: ({navigation})=>({
-      title: 'Day',
+      title: 'Today',
     })
   },
   WeekStat: {
-    screen: NuevoStat,
+    screen: NuevoStatWeek,
     navigationOptions: ({navigation})=>({
       title: 'Week',
     })
@@ -76,6 +77,12 @@ const statRoutes = {
     screen: NuevoStat,
     navigationOptions: ({navigation})=>({
       title: 'Month',
+    })
+  },
+  AllStat: {
+    screen: NuevoStat,
+    navigationOptions: ({navigation})=>({
+      title: 'All Time',
     })
   }
 }
@@ -157,13 +164,11 @@ export const MyApp = DrawerNavigator({
     screen: NuevoDashStack,
   },
   Notifications: {
-    screen: MyNotificationsScreen,
-    title: 'NuevoNotif',
+    screen: MyNotificationsScreen
   },
   NuevoStat: {
     screen: NuevoStatStack,
-    title: 'NuevoStats',
   },
 },{
-  initialRouteName: 'Home'
+  initialRouteName: 'NuevoStat'
 });
