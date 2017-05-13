@@ -1,11 +1,13 @@
+import React, { Component } from 'react';
+import { View, Text, Image, StyleSheet, Button } from 'react-native';
+import { Icon } from 'react-native-elements';
+import { DrawerNavigator, NavigationActions } from 'react-navigation';
+
 class MyHomeScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Home',
     drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./chats-icon.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
+      <Icon name="home" size={25} />
     ),
   };
 
@@ -23,10 +25,7 @@ class MyNotificationsScreen extends React.Component {
   static navigationOptions = {
     drawerLabel: 'Notifications',
     drawerIcon: ({ tintColor }) => (
-      <Image
-        source={require('./notif-icon.png')}
-        style={[styles.icon, {tintColor: tintColor}]}
-      />
+      <Icon name="rowing" size={25} />
     ),
   };
 
@@ -47,7 +46,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const MyApp = DrawerNavigator({
+export const MyApp = DrawerNavigator({
   Home: {
     screen: MyHomeScreen,
   },
