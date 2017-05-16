@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native';
 const NuevoStyles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#f1f5f8'
+    backgroundColor: '#fff'
   },
   loginBg: {
     backgroundColor: 'rgba(233, 111, 66, 0.98)',
@@ -38,18 +38,6 @@ const NuevoStyles = StyleSheet.create({
   input: {
     width: 200,
     color: '#fff',
-  },
-  datcon: {
-    backgroundColor: '#fff',
-    marginHorizontal: 16,
-    marginVertical: 16,
-  },
-  row: {
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-    marginVertical: 5,
-    paddingHorizontal: 16,
-    paddingBottom: 5,
   }
 });
 

@@ -39,17 +39,23 @@ const NuevoStyles = StyleSheet.create({
     width: 200,
     color: '#fff',
   },
-  datcon: {
-    backgroundColor: '#fff',
-    marginHorizontal: 16,
-    marginVertical: 16,
+  card: {
+    flexDirection: 'row',
+    paddingVertical: 16,
   },
-  row: {
-    borderBottomWidth: 1,
-    borderColor: '#eee',
-    marginVertical: 5,
-    paddingHorizontal: 16,
-    paddingBottom: 5,
+  left: {
+    paddingLeft: 16,
+    paddingRight: 32,
+  },
+  right: {
+    paddingRight: 32,
+  },
+  key: {
+    fontSize: 16,
+    marginBottom: 10,
+  },
+  val: {
+    fontSize: 30,
   }
 });
 

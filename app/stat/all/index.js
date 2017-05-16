@@ -6,7 +6,7 @@ import NuevoFireAuth from '../../firebase';
 var user = NuevoFireAuth.currentUser;
 import NuevoStyles from './styles';
 
-export default class NuevoStatWeek extends Component {
+export default class NuevoStatAll extends Component {
   constructor(props){
     super(props);
     this.state = {
@@ -15,7 +15,7 @@ export default class NuevoStatWeek extends Component {
     }
   }
   componentDidMount() {
-    console.log("NuevoStatWeek Component did mount");
+    console.log("NuevoStatAll Component did mount");
     if (user) {
       console.log(user)
       user.providerData.forEach(function (profile) {
@@ -45,7 +45,7 @@ export default class NuevoStatWeek extends Component {
               </View>
               <View style={[NuevoStyles.right]}>
                 <Text style={[NuevoStyles.key]}>
-                 The idea with React Native Elements is more about component structure than actual design.
+                 All Tab
                 </Text>
               </View>
             </View>

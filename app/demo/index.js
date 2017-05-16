@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, Linking, TouchableHighlight } from 'react-native';
 import { Button } from 'react-native-elements'
 
 import NuevoStyles from './styles';
@@ -13,6 +13,26 @@ export default class NuevoDemo extends Component {
   onPressLogin(){
     console.log("Login button pressed");
     this.props.navigation.navigate('Login');
+  }
+  _onTermsPress(){
+    let url = "https://blufieldsenergy.com/terms-of-use.html";
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Don\'t know how to open URI: ' + url);
+      }
+    });
+  }
+  _onPrivacyPress() {
+    let url = "https://blufieldsenergy.com/privacy-policy.html";
+    Linking.canOpenURL(url).then(supported => {
+      if (supported) {
+        Linking.openURL(url);
+      } else {
+        console.log('Don\'t know how to open URI: ' + url);
+      }
+    });
   }
   componentWillMount() {
     console.log("Demo Component will mount");
@@ -65,9 +85,13 @@ export default class NuevoDemo extends Component {
         </View>
         <View style={NuevoStyles.footer}>
           <Text style={NuevoStyles.footerText}>By signing in you agree to our</Text>
-          <Text style={[NuevoStyles.footerText,{textDecorationLine: 'underline'}]}>Terms of Use</Text>
+          <TouchableHighlight onPress={this._onTermsPress}>
+            <Text style={[NuevoStyles.footerText,{textDecorationLine: 'underline'}]}>Terms of Use</Text>
+          </TouchableHighlight>
           <Text style={[NuevoStyles.footerText]}> and </Text>
-          <Text style={[NuevoStyles.footerText,{textDecorationLine: 'underline'}]}>Privacy Policy</Text>
+          <TouchableHighlight onPress={this._onPrivacyPress}>
+            <Text style={[NuevoStyles.footerText,{textDecorationLine: 'underline'}]}>Privacy Policy</Text>
+          </TouchableHighlight>
         </View>
       </View>
     )
