@@ -41,7 +41,7 @@ export default class NuevoP extends Component {
               </View>
             </View>
           </Row>
-          <Row containerStyle={[NuevoStyles.row, {padding: 0, elevation: 8,}]}>
+          <Row containerStyle={[NuevoStyles.row, {padding: 0, elevation: 4,}]}>
             <View style={[NuevoStyles.liCon]}>
               <View style={[NuevoStyles.li]}>
                 <Text style={[NuevoStyles.liText]}>Energy</Text>

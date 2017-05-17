@@ -38,7 +38,7 @@ const NuevoStyles = StyleSheet.create({
     fontSize: 16,
   },
   val: {
-    fontSize: 32,
+    fontSize: 40,
     paddingVertical: 10,
   },
   liCon: {
