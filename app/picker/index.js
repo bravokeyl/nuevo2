@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, ScrollView, Linking } from 'react-native';
-import { FormLabel, FormInput, Button, Icon, Card } from 'react-native-elements';
+import { FormLabel, FormInput, Button, Icon, Card, Grid, Row } from 'react-native-elements';
 import { NavigationActions } from 'react-navigation';
 import NuevoFireAuth from '../firebase';
 var user = NuevoFireAuth.currentUser;
@@ -9,10 +9,6 @@ import NuevoStyles from './styles';
 export default class NuevoPicker extends Component {
   constructor(props){
     super(props);
-    this.state = {
-      email: '',
-      password: ''
-    }
     this.onPressHandler = this.onPressHandler.bind(this);
   }
   onPressHandler(){
@@ -39,7 +35,14 @@ export default class NuevoPicker extends Component {
   render(){
     return(
       <View style={ [NuevoStyles.container] }>
-        <Button title="Click" onPress={this.onPressHandler}/>
+        <Grid containerStyle={[NuevoStyles.grid]}>
+          <Row containerStyle={[NuevoStyles.row]}>
+            <Text>ROW</Text>
+          </Row>
+          <Row containerStyle={[NuevoStyles.row]}>
+            <Text>ROW</Text>
+          </Row>
+        </Grid>
       </View>
     )
   }
