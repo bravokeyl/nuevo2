@@ -13,6 +13,49 @@ const NuevoStyles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 16,
     marginBottom: 16,
+  },
+  circleCon: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 0,
+    borderColor: 'red',
+    backgroundColor: 'transparent',
+  },
+  circle: {
+    height: 200,
+    width: 200,
+    borderWidth: 0,
+    borderColor: 'green',
+    borderRadius: 100,
+    backgroundColor: '#5c82ed',
+    justifyContent: 'center',
+    elevation: 16,
+  },
+  text: {
+    color: '#fff',
+    textAlign: 'center',
+    fontSize: 16,
+  },
+  val: {
+    fontSize: 32,
+    paddingVertical: 10,
+  },
+  liCon: {
+    flex: 1,
+    justifyContent: 'center',
+  },
+  li: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingHorizontal: 16,
+    borderBottomWidth: 1,
+    borderColor: '#eee',
+  },
+  liText: {
+    fontSize: 16,
   }
 });
 

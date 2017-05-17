@@ -6,6 +6,7 @@ import NuevoFireAuth from '../firebase';
 var user = NuevoFireAuth.currentUser;
 import NuevoStyles from './styles';
 
+
 export default class NuevoPicker extends Component {
   constructor(props){
     super(props);
@@ -33,6 +34,62 @@ export default class NuevoPicker extends Component {
   }
 
   render(){
+    let data = [
+    [{
+      "v": 49,
+      "name": "Solar"
+    }, {
+      "v": 85,
+      "name": "Grid"
+    }],
+  ]
+
+  let options = {
+    width: 150,
+    height: 200,
+    margin: {
+      top: 20,
+      left: 25,
+      bottom: 50,
+      right: 20
+    },
+    color: '#fe5722',
+    gutter: 20,
+    animate: {
+      type: 'oneByOne',
+      duration: 200,
+      fillTransition: 3
+    },
+    axisX: {
+      showAxis: false,
+      showLines: false,
+      showLabels: true,
+      showTicks: true,
+      zeroAxis: false,
+      orient: 'bottom',
+      label: {
+        fontFamily: 'Arial',
+        fontSize: 8,
+        fontWeight: true,
+        fill: '#34495E'
+      }
+    },
+    axisY: {
+      showAxis: false,
+      showLines: false,
+      showLabels: true,
+      showTicks: true,
+      zeroAxis: false,
+      orient: 'left',
+      label: {
+        fontFamily: 'Arial',
+        fontSize: 8,
+        fontWeight: true,
+        fill: '#34495E'
+      }
+    }
+  }
+
     return(
       <View style={ [NuevoStyles.container] }>
         <Grid containerStyle={[NuevoStyles.grid]}>

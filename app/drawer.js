@@ -7,7 +7,7 @@ import NuevoStat from './stat';
 import NuevoStatWeek from './stat/week';
 import NuevoStatMonth from './stat/month';
 import NuevoStatAll from './stat/all';
-import NuevoPicker from './picker/index';
+import NuevoPicker from './picker/p';
 
 const statRoutes = {
   DayStat: {
