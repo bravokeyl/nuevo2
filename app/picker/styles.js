@@ -28,9 +28,9 @@ const NuevoStyles = StyleSheet.create({
     borderWidth: 0,
     borderColor: 'green',
     borderRadius: 100,
-    backgroundColor: '#5c82ed',
+    backgroundColor: '#f1636c',//'#f3635c',//'#5c82ed',
     justifyContent: 'center',
-    elevation: 16,
+    elevation: 8,
   },
   text: {
     color: '#fff',
