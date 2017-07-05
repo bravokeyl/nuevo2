@@ -1,13 +1,64 @@
 import React, { Component } from 'react';
 import { View, Text, Image, StyleSheet, Button } from 'react-native';
 import { Icon } from 'react-native-elements';
-import { DrawerNavigator, TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
+import { DrawerNavigator, DrawerItems, TabNavigator, StackNavigator, NavigationActions } from 'react-navigation';
 import NuevoDash from './dash';
 import NuevoStat from './stat';
 import NuevoStatWeek from './stat/week';
 import NuevoStatMonth from './stat/month';
 import NuevoStatAll from './stat/all';
 import NuevoPicker from './picker/p';
+
+const NuevoDrawerContentComponent = (props) => (
+  <View style={styles.container}>
+    <Image source={require('./assets/l.jpg')} style={styles.dbg} >
+      <View style={styles.dcon}>
+        <Text style={styles.name}>Veera Bhadra</Text>
+        <Text style={styles.role}>Product Engineer</Text>
+        <Image source={require('./assets/avatar.jpg')} style={styles.avatar}/>
+      </View>
+    </Image>
+    <DrawerItems {...props} style={styles.di}/>
+  </View>
+);
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: 'aliceblue',
+    borderWidth: 2,
+    borderColor: 'blue',
+  },
+  dbg: {
+    height: 200,
+    resizeMode: "cover",
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  dcon: {
+    flex: 1,
+    borderWidth: 1,
+    borderColor: 'green',
+    // marginLeft: -80,
+  },
+  avatar: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
+    alignSelf: 'center'
+  },
+  name: {
+    fontSize: 24,
+    color: '#fff',
+  },
+  role: {
+    color: '#fff',
+  },
+  di: {
+    flex: 1,
+  }
+});
+
 
 const statRoutes = {
   DayStat: {
@@ -141,5 +192,16 @@ export const MyApp = DrawerNavigator({
     screen: NuevoStatStack,
   },
 },{
-  initialRouteName: 'Picker'
+  initialRouteName: 'Picker',
+  contentComponent: NuevoDrawerContentComponent,
+  contentOptions: {
+    activeTintColor: '#333',
+    activeBackgroundColor: 'transparent',
+    inactiveTintColor: "#666",
+    inactiveBackgroundColor: 'transparent',
+    style: {
+      marginVertical: 0,
+    }
+  }
+
 });
